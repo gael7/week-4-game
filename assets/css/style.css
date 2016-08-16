@@ -1,0 +1,39 @@
+.sw{
+	background-image: url(../images/tatooine.jpg);
+	background-size: 100% 100%;
+}
+.player{
+	height: 122px;
+	width: 142px;
+	padding: 10px;
+	background-color: white;
+}
+#obiwan, #maul, #sidious, #luke{
+	background-image: url(../images/obiwan.jpg);
+	background-size: cover;
+	height: 100px;
+	width: 120px;
+	background-repeat: no-repeat;
+	margin: 0;
+}
+#obiwan{
+	background-image: url(../images/obiwan.jpg);
+}
+#luke{
+	background-image: url(../images/luke.png);
+}
+#sidious{
+	background-image: url(../images/sidious.png);
+}
+#maul{
+	background-image: url(../images/maul.jpg);
+}
+#swhead{
+	font-family: 'Geostar Fill';
+	font-size: 40px;
+	color: black;
+}
+#fightsection{
+	display: inline;
+}
+
