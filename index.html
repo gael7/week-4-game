@@ -12,9 +12,6 @@
 </head>
 
 <body>
-	<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
-	 <script type="text/javascript" src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="assets/javascript/game.js"></script>
 	<div class="container wrapper sw">
 		<div class="row">
 			<div class="col-lg-7"></div>
@@ -26,9 +23,9 @@
 			<div class="col-lg-7">
 			<div class="panel panel-success">
   				<div class="panel-heading">
-    				<h3 class="panel-title">Characters to select</h3>
+    				<h3 class="panel-title" id="yourchar">Characters to select</h3>
   				</div>
-  				<div class="panel-body">
+  				<div class="panel-body" id="yourcharsel">
     				<a class="btn btn-success btn-md player"><div id="obiwan"></div></a>
     				<a class="btn btn-success btn-md player"><div id="luke"></div></a>
     				<a class="btn btn-success btn-md player"><div id="sidious"></div></a>
@@ -43,7 +40,7 @@
   				<div class="panel-heading">
     				<h3 class="panel-title">Enemies Available To Attack</h3>
   				</div>
-  				<div class="panel-body">
+  				<div class="panel-body" id="enemies">
 
  				</div>
 			</div>
@@ -68,5 +65,9 @@
 			</div>
 			</div>
 		</div>
+		<script src="https://code.jquery.com/jquery-3.1.0.min.js"   integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="   crossorigin="anonymous"></script>
+	 <script type="text/javascript" src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+
+	<script type="text/javascript" src="assets/javascript/game.js"></script>
 </body>
 </html>
