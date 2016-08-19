@@ -2,31 +2,36 @@
 	background-image: url(../images/tatooine.jpg);
 	background-size: 100% 100%;
 }
-.player{
+.player, .enemy, .defender{
 	height: 122px;
 	width: 142px;
 	padding: 10px;
+	margin: 0px 10px;
+}
+.player, .enemy{
 	background-color: white;
 }
-#obiwan, #maul, #sidious, #luke{
-	background-image: url(../images/obiwan.jpg);
+.defender{
+	background-color: black;
+}
+#namee, #healthPointse{
+	color: white;
+	font-size: 12px;
+	margin: 0;
+	padding: 0;
+}
+#name, #healthPoints{
+	color: black;
+	font-size: 12px;
+	margin: 0;
+	padding: 0;
+}
+#pic{
 	background-size: cover;
-	height: 100px;
+	height: 80px;
 	width: 120px;
 	background-repeat: no-repeat;
 	margin: 0;
-}
-#obiwan{
-	background-image: url(../images/obiwan.jpg);
-}
-#luke{
-	background-image: url(../images/luke.png);
-}
-#sidious{
-	background-image: url(../images/sidious.png);
-}
-#maul{
-	background-image: url(../images/maul.jpg);
 }
 #swhead{
 	font-family: 'Geostar Fill';
@@ -36,4 +41,8 @@
 #fightsection{
 	display: inline;
 }
+#messages{
+	margin-left: 25px;
+}
+
 
