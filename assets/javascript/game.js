@@ -40,6 +40,7 @@ var game = {
 	currentAttack: 0,
 	currentHp: 0,
 	currentOpponentH: 0,
+	notAvailableOponnent: [],
 
 	playSequence: function(){
 		game.createPlayers();
@@ -49,7 +50,7 @@ var game = {
 				$(".enemy").on("click", function (event) {
 					var charInd2 = $(this).attr("id");
 					game.selectEnemy(charInd, charInd2);
-					$("#attackbutton").on("click", function(){
+					$("#attackbutton").on("click", function(event){
 						game.attackSequence();
 					});
 				});				
@@ -96,16 +97,20 @@ var game = {
 			if (charInd2===game.enemiesAvailable[d].iD){
 				$("#enemy").html("<a class='btn btn-success btn-md defender' id='" +game.enemiesAvailable[d].iD+ "'><p id='namee'>" + game.enemiesAvailable[d].name +"</p><img id='pic' src='"+ game.enemiesAvailable[d].pic +"'><p id='healthPointse'>" + game.enemiesAvailable[d].hP +"</p></a>");
 				game.yourEnemy.push(game.enemiesAvailable[d]);
+				console.log(game.yourEnemy);
 			} else if(charInd!==charInd2){
 				$("#enemies").append("<a class='btn btn-danger btn-md enemy' id='"+game.enemiesAvailable[d].iD+"'><p id='name'>" + game.enemiesAvailable[d].name +"</p><img id='pic' src='"+ game.enemiesAvailable[d].pic +"'><p id='healthPoints'>" + game.enemiesAvailable[d].hP +"</p></a>");	
+				console.log("Enemy available to battle: " + game.enemiesAvailable[d].iD);
 			}
 		}	
 	},
 
 	createBattle: function(){
-		game.currentBattle.push(game.yourPlayer[0]);
-		game.currentBattle.push(game.yourEnemy[0]);
-		console.log(game.currentBattle[0].name+" Vs "+game.currentBattle[1].name);
+		game.currentBattle[0]=game.yourPlayer[0];
+		console.log(game.currentBattle[1]);
+		game.currentBattle[1]=game.yourEnemy[0];
+		console.log(game.currentBattle[0].name+" Vs "+ game.currentBattle[1].name);
+		game.currentAttack=0;
 		game.currentHp=game.currentBattle[0].hP;
 		game.currentOpponentH= game.currentBattle[1].hP;
 		$("#yourcharsel").html("<a class='btn btn-success btn-md player' id='" +game.currentBattle[0].iD+ "'><p id='name'>" + game.currentBattle[0].name +"</p><img id='pic' src='"+ game.currentBattle[0].pic +"'><p id='healthPoints'>" + game.currentBattle[0].hP +"</p></a>");	
@@ -126,13 +131,26 @@ var game = {
 				game.restart();
 			});
 		} else if (game.currentOpponentH<=0) {
-			$("#messages").html("<p> You have defeated "+game.currentBattle[1].name+ ", you can choose to fight another enemy.</p>");
-			$("#enemy").html(" ");
-		} else{
-			$("#messages").html("<p>You attacked "+ game.currentBattle[1].name +" for "+ game.currentAttack +" damage.</p>"+"<p>"+game.currentBattle[1].name + " attacked you back for " + game.currentBattle[1].cP+".</p>");
-			$("#enemy").html("<a class='btn btn-success btn-md defender' id='" +game.currentBattle[1].iD+ "'><p id='namee'>" + game.currentBattle[1].name +"</p><img id='pic' src='"+ game.currentBattle[1].pic +"'><p id='healthPointse'>" + game.currentOpponentH +"</p></a>");
-		}
-				$("#yourcharsel").html("<a class='btn btn-success btn-md player' id='" +game.currentBattle[0].iD+ "'><p id='name'>" + game.currentBattle[0].name +"</p><img id='pic' src='"+ game.currentBattle[0].pic +"'><p id='healthPoints'>" + game.currentHp +"</p></a>");	
+				$("#messages").html("<p> You have defeated "+game.currentBattle[1].name+ ", you can choose to fight another enemy.</p>");
+				$("#enemy").html(" ");
+				game.notAvailableOponnent.push(game.currentBattle[1]);
+				game.nextBattle();
+			} else{
+				$("#messages").html("<p>You attacked "+ game.currentBattle[1].name +" for "+ game.currentAttack +" damage.</p>"+"<p>"+game.currentBattle[1].name + " attacked you back for " + game.currentBattle[1].cP+".</p>");
+				$("#enemy").html("<a class='btn btn-success btn-md defender' id='" +game.currentBattle[1].iD+ "'><p id='namee'>" + game.currentBattle[1].name +"</p><img id='pic' src='"+ game.currentBattle[1].pic +"'><p id='healthPointse'>" + game.currentOpponentH +"</p></a>");
+			}
+		$("#yourcharsel").html("<a class='btn btn-success btn-md player' id='" +game.currentBattle[0].iD+ "'><p id='name'>" + game.currentBattle[0].name +"</p><img id='pic' src='"+ game.currentBattle[0].pic +"'><p id='healthPoints'>" + game.currentHp +"</p></a>");	
+	},
+	nextBattle: function(){
+		console.log("Ready for next battle?");
+		$(".enemy").on('click', function(event){
+			console.log("Ready for second battle")
+			var charInd3=$(this).attr("id");
+			game.selectEnemy(game.currentBattle[0].iD, charInd3);
+			$("#attackbutton").on("click", function(event){
+				game.attackSequence();
+			});
+		});
 	},
 	restart: function(){
 		$("#yourcharsel").html("");
@@ -151,7 +169,5 @@ var game = {
 }
 
 $(document).ready(function(){
-	
-	game.playSequence();
-		
+	game.playSequence();	
 });
