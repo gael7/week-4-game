@@ -1,48 +1,55 @@
-.sw{
-	background-image: url(../images/tatooine.jpg);
-	background-size: 100% 100%;
-}
-.player, .enemy, .defender{
-	height: 122px;
-	width: 142px;
-	padding: 10px;
-	margin: 0px 10px;
-}
-.player, .enemy{
-	background-color: white;
-}
-.defender{
-	background-color: black;
-}
-#namee, #healthPointse{
-	color: white;
-	font-size: 12px;
-	margin: 0;
-	padding: 0;
-}
-#name, #healthPoints{
-	color: black;
-	font-size: 12px;
-	margin: 0;
-	padding: 0;
-}
-#pic{
-	background-size: cover;
-	height: 80px;
-	width: 120px;
-	background-repeat: no-repeat;
-	margin: 0;
-}
-#swhead{
-	font-family: 'Geostar Fill';
-	font-size: 40px;
-	color: black;
-}
-#fightsection{
-	display: inline;
-}
-#messages{
-	margin-left: 25px;
+.sw {
+    background-image: url(../images/tatooine.jpg);
+    background-size: 100% 100%;
 }
 
+.player, .enemy, .defender {
+    height: 122px;
+    width: 142px;
+    padding: 10px;
+    margin: 0px 10px;
+}
 
+.player, .enemy {
+    background-color: white;
+}
+
+.defender {
+    background-color: black;
+}
+
+#namee, #healthPointse {
+    color: white;
+    font-size: 12px;
+    margin: 0;
+    padding: 0;
+}
+
+#name, #healthPoints {
+    color: black;
+    font-size: 12px;
+    margin: 0;
+    padding: 0;
+}
+
+#pic {
+    background-size: cover;
+    height: 80px;
+    width: 120px;
+    background-repeat: no-repeat;
+    margin: 0;
+}
+
+#swhead {
+    font-family: 'Geostar Fill';
+    font-size: 40px;
+    color: black;
+}
+
+#fightsection {
+    display: inline;
+}
+
+#messages {
+    margin-left: 25px;
+}

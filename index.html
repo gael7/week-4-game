@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<title>Star Wars RPG Game</title>
 	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
@@ -13,59 +14,66 @@
 
 <body class="sw">
 	<div class="container wrapper">
+		<!--Section for the head-->
 		<div class="row">
 			<div class="col-lg-6"></div>
 			<div class="col-lg-6" id="swhead">
 				Star Wars RPG!
 			</div>
 		</div>
+
+		<!--Section for your character-->
 		<div class="row">
 			<div class="col-lg-8">
-			<div class="panel panel-success">
-  				<div class="panel-heading">
-    				<h3 class="panel-title" id="yourchar">Characters to select</h3>
-  				</div>
-  				<div class="panel-body" id="yourcharsel">
- 				</div>
-			</div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-lg-6">
-			<div class="panel panel-danger">
-  				<div class="panel-heading">
-    				<h3 class="panel-title">Enemies Available To Attack</h3>
-  				</div>
-  				<div class="panel-body" id="enemies">
-
- 				</div>
-			</div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-lg-6">
-			<div class="panel panel-default">
-  				<div class="panel-heading">
-    				<h3 class="panel-title fightsection">Fight Section</h3> <a class="btn btn-primary btn-md" id="attackbutton">Attack</a>
-  				</div>
-  				<div class="panel-body">
-
- 				</div>
- 				<div class="panel panel-default">
-  				<div class="panel-heading">
-    				<h3 class="panel-title">Defender</h3>
-  				</div>
-  				<div class="panel-body" id="enemy">
- 				</div>
- 				<div id="messages"></div>
+				<div class="panel panel-success">
+					<div class="panel-heading">
+						<h3 class="panel-title" id="yourchar">Characters to select</h3>
+					</div>
+					<div class="panel-body" id="yourcharsel">
+					</div>
 				</div>
 			</div>
+		</div>
+
+		<!--Section for your enemies-->
+		<div class="row">
+			<div class="col-lg-6">
+				<div class="panel panel-danger">
+					<div class="panel-heading">
+						<h3 class="panel-title">Enemies Available To Attack</h3>
+					</div>
+					<div class="panel-body" id="enemies">
+
+					</div>
+				</div>
 			</div>
 		</div>
-	</div>
-		<script src="https://code.jquery.com/jquery-3.1.0.min.js"   integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="   crossorigin="anonymous"></script>
-	 <script type="text/javascript" src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 
+		<!--Section for the battle-->
+		<div class="row">
+			<div class="col-lg-6">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-title fightsection">Fight Section</h3> <a class="btn btn-primary btn-md disabled" id="attackbutton">Attack</a>
+					</div>
+					<div class="panel-body">
+					</div>
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title">Defender</h3>
+						</div>
+						<div class="panel-body" id="enemy">
+						</div>
+						<div id="messages"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="assets/javascript/game.js"></script>
 </body>
+
 </html>
